@@ -24,12 +24,12 @@ void run_simulation(vector<vector<double>> atom_pos, double rc, double L, double
 
 int main() {
     int N = 200; //number of atoms
-    double rho = 0.9; //density
+    double rho = 0.3; //density
     double rc; //potential cut off distance
     double E_cumulative; // Cumulative E
     double P_cumulative; // Cumulative P
     double acc_ratio; // for calculating acceptance ratios
-    double temperature = 2.0;
+    double temperature = 1.0;
     int N_mcs = 500; // Number of data collection Monte Carlo Steps
     int N_mcs_eq = 500; // Number of Equlibration Monte Carlo Steps
 
@@ -262,7 +262,7 @@ void run_simulation(vector<vector<double>> atom_pos, double rc, double L, double
     int acc = 0;
     int choice;
     int N = (int)atom_pos.size();
-    double lambda = 0.1; // larges possible move
+    double lambda = 0.5; // largest possible move
     vector<double> rand_vec(3);
     vector<double> old_pos(3);
     random_device rd; // used to seed the random number generators such that each thread has its own indipendent stream of RN's
